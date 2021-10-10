@@ -5,8 +5,8 @@ class FileCommand extends Command {
   async run() {
     const { flags } = this.parse(FileCommand)
 
-    const proc = new FileEvent(flags.filepath, flags.action);
-    proc.run();
+    const e = new FileEvent(flags.filepath, flags.action);
+    e.run();
 
   }
 }

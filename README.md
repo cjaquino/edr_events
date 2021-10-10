@@ -32,22 +32,20 @@ USAGE
 * [`edr_events hello`](#edr_events-hello)
 * [`edr_events help [COMMAND]`](#edr_events-help-command)
 * [`edr_events init`](#edr_events-init)
+* [`edr_events net`](#edr_events-net)
 * [`edr_events process`](#edr_events-process)
 
 ## `edr_events file`
 
-Describe the command here
+Creates, modifies, or deletes a file.
 
 ```
 USAGE
   $ edr_events file
 
 OPTIONS
-  -n, --name=name  name to print
-
-DESCRIPTION
-  ...
-  Extra documentation goes here
+  -a, --action=action      Action to perform: create, modify, delete
+  -f, --filepath=filepath  Path of the file to be created, modified, or deleted.
 ```
 
 _See code: [src/commands/file.js](https://github.com/cjaquino/edr_events/blob/v0.0.0/src/commands/file.js)_
@@ -97,6 +95,24 @@ USAGE
 ```
 
 _See code: [src/commands/init.js](https://github.com/cjaquino/edr_events/blob/v0.0.0/src/commands/init.js)_
+
+## `edr_events net`
+
+Describe the command here
+
+```
+USAGE
+  $ edr_events net
+
+OPTIONS
+  -n, --name=name  name to print
+
+DESCRIPTION
+  ...
+  Extra documentation goes here
+```
+
+_See code: [src/commands/net.js](https://github.com/cjaquino/edr_events/blob/v0.0.0/src/commands/net.js)_
 
 ## `edr_events process`
 

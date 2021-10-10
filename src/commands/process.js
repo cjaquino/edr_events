@@ -6,8 +6,8 @@ class ProcessCommand extends Command {
     const { flags } = this.parse(ProcessCommand)
 
     if (flags.command) {
-      const proc = new processEvent(flags.command);
-      proc.run();
+      const e = new processEvent(flags.command);
+      e.run();
     }
   }
 }
