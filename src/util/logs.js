@@ -1,4 +1,4 @@
-const { mkdir, readFile, writeFile } = require('fs');
+const { mkdir, readFileSync, writeFileSync } = require('fs');
 const paths = require('./paths.js');
 
 const initLogs = async () => {
@@ -8,7 +8,7 @@ const initLogs = async () => {
     };
   })
 
-  await writeFile(paths.EDR_LOG, '[]', err => {
+  writeFileSync(paths.EDR_LOG, '[]', err => {
     if (err) {
       console.error('Log file already exists.')
     };
@@ -17,16 +17,14 @@ const initLogs = async () => {
 
 
 const logEvent = (event) => {
-  readFile(paths.EDR_LOG, (err, data) => {
-    const logs = JSON.parse(data);
+  const logs = JSON.parse(readFileSync(paths.EDR_LOG))
+  
+  logs.push(event);
 
-    logs.push(event);
-
-    writeFile(paths.EDR_LOG, JSON.stringify(logs), err => {
-      if (err) {
-        console.err(err);
-      };
-    })
+  writeFileSync(paths.EDR_LOG, JSON.stringify(logs), err => {
+    if (err) {
+      console.err(err);
+    };
   })
 }
 

@@ -28,12 +28,31 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
+* [`edr_events configure`](#edr_events-configure)
 * [`edr_events file`](#edr_events-file)
 * [`edr_events hello`](#edr_events-hello)
 * [`edr_events help [COMMAND]`](#edr_events-help-command)
 * [`edr_events init`](#edr_events-init)
 * [`edr_events net`](#edr_events-net)
 * [`edr_events process`](#edr_events-process)
+
+## `edr_events configure`
+
+Describe the command here
+
+```
+USAGE
+  $ edr_events configure
+
+OPTIONS
+  -n, --name=name  name to print
+
+DESCRIPTION
+  ...
+  Extra documentation goes here
+```
+
+_See code: [src/commands/configure.js](https://github.com/cjaquino/edr_events/blob/v0.0.0/src/commands/configure.js)_
 
 ## `edr_events file`
 
@@ -98,18 +117,14 @@ _See code: [src/commands/init.js](https://github.com/cjaquino/edr_events/blob/v0
 
 ## `edr_events net`
 
-Describe the command here
+Creates a network connection
 
 ```
 USAGE
   $ edr_events net
 
 OPTIONS
-  -n, --name=name  name to print
-
-DESCRIPTION
-  ...
-  Extra documentation goes here
+  -u, --url=url  URL to connect to
 ```
 
 _See code: [src/commands/net.js](https://github.com/cjaquino/edr_events/blob/v0.0.0/src/commands/net.js)_
