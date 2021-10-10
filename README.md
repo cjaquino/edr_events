@@ -30,6 +30,8 @@ USAGE
 <!-- commands -->
 * [`edr_events hello`](#edr_events-hello)
 * [`edr_events help [COMMAND]`](#edr_events-help-command)
+* [`edr_events init`](#edr_events-init)
+* [`edr_events process`](#edr_events-process)
 
 ## `edr_events hello`
 
@@ -65,4 +67,33 @@ OPTIONS
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.2.3/src/commands/help.ts)_
+
+## `edr_events init`
+
+Describe the command here
+
+```
+USAGE
+  $ edr_events init
+
+OPTIONS
+  -n, --name=name  name to print
+
+DESCRIPTION
+  ...
+  Extra documentation goes here
+```
+
+_See code: [src/commands/init.js](https://github.com/cjaquino/edr_events/blob/v0.0.0/src/commands/init.js)_
+
+## `edr_events process`
+
+Runs a process
+
+```
+USAGE
+  $ edr_events process
+```
+
+_See code: [src/commands/process.js](https://github.com/cjaquino/edr_events/blob/v0.0.0/src/commands/process.js)_
 <!-- commandsstop -->
