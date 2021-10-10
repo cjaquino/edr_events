@@ -28,28 +28,20 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`edr_events configure`](#edr_events-configure)
+* [`edr_events configure [FILEPATH]`](#edr_events-configure-filepath)
 * [`edr_events file`](#edr_events-file)
-* [`edr_events hello`](#edr_events-hello)
 * [`edr_events help [COMMAND]`](#edr_events-help-command)
 * [`edr_events init`](#edr_events-init)
 * [`edr_events net`](#edr_events-net)
 * [`edr_events process`](#edr_events-process)
 
-## `edr_events configure`
+## `edr_events configure [FILEPATH]`
 
-Describe the command here
+Pass a config file here to run multiple events.
 
 ```
 USAGE
-  $ edr_events configure
-
-OPTIONS
-  -n, --name=name  name to print
-
-DESCRIPTION
-  ...
-  Extra documentation goes here
+  $ edr_events configure [FILEPATH]
 ```
 
 _See code: [src/commands/configure.js](https://github.com/cjaquino/edr_events/blob/v0.0.0/src/commands/configure.js)_
@@ -68,24 +60,6 @@ OPTIONS
 ```
 
 _See code: [src/commands/file.js](https://github.com/cjaquino/edr_events/blob/v0.0.0/src/commands/file.js)_
-
-## `edr_events hello`
-
-Describe the command here
-
-```
-USAGE
-  $ edr_events hello
-
-OPTIONS
-  -n, --name=name  name to print
-
-DESCRIPTION
-  ...
-  Extra documentation goes here
-```
-
-_See code: [src/commands/hello.js](https://github.com/cjaquino/edr_events/blob/v0.0.0/src/commands/hello.js)_
 
 ## `edr_events help [COMMAND]`
 
