@@ -2,7 +2,7 @@ const { mkdir, readFile, writeFile } = require('fs');
 const paths = require('./paths.js');
 
 const initLogs = async () => {
-  await mkdir(paths.EDR_TEST_HOME, err => {
+  await mkdir(paths.EDR_EVENTS_HOME, err => {
     if (err) {
       console.error('Logs directory already exists.')
     };

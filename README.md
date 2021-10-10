@@ -28,10 +28,29 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
+* [`edr_events file`](#edr_events-file)
 * [`edr_events hello`](#edr_events-hello)
 * [`edr_events help [COMMAND]`](#edr_events-help-command)
 * [`edr_events init`](#edr_events-init)
 * [`edr_events process`](#edr_events-process)
+
+## `edr_events file`
+
+Describe the command here
+
+```
+USAGE
+  $ edr_events file
+
+OPTIONS
+  -n, --name=name  name to print
+
+DESCRIPTION
+  ...
+  Extra documentation goes here
+```
+
+_See code: [src/commands/file.js](https://github.com/cjaquino/edr_events/blob/v0.0.0/src/commands/file.js)_
 
 ## `edr_events hello`
 
@@ -70,18 +89,11 @@ _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.2.3
 
 ## `edr_events init`
 
-Describe the command here
+Scaffolds file structure for EDR Telemetry events
 
 ```
 USAGE
   $ edr_events init
-
-OPTIONS
-  -n, --name=name  name to print
-
-DESCRIPTION
-  ...
-  Extra documentation goes here
 ```
 
 _See code: [src/commands/init.js](https://github.com/cjaquino/edr_events/blob/v0.0.0/src/commands/init.js)_
@@ -93,6 +105,9 @@ Runs a process
 ```
 USAGE
   $ edr_events process
+
+OPTIONS
+  -c, --command=command  Command to execute
 ```
 
 _See code: [src/commands/process.js](https://github.com/cjaquino/edr_events/blob/v0.0.0/src/commands/process.js)_

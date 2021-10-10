@@ -1,17 +1,16 @@
 const { logEvent } = require('./logs.js')
 const { exec } = require('child_process');
-const { userInfo } = require('os');
+const EDREvent = require('./EDREvent.js');
 
-class ProcessEvent {
+class ProcessEvent extends EDREvent{
   constructor(command) {
-    this.timestamp = new Date();
-    this.user = userInfo().username;
+    super();
     this.processName = command.split(' ')[0];
     this.processCLI = command;
   }
 
   run() {
-    exec(this.processCLI, (err, stdout, stderr) => {
+    const proc = exec(this.processCLI, (err, stdout, stderr) => {
       if (err) {
         console.error(`error: ${err.message}`);
         return;
@@ -23,10 +22,15 @@ class ProcessEvent {
       }
   
       console.log(`stdout: ${stdout}`)
-  
-      this.pid = process.pid;
-      logEvent(this);
     })
+  
+    // TODO: don't log if there are errors
+    // console.log(proc);
+    // console.log('process name: ', proc.spawnargs[0]);
+    // console.log('process cli: ', proc.spawnargs.join(' '));
+    // console.log('process id: ', proc.pid);
+    this.pid = proc.pid;
+    logEvent(this);
   }
 
 

@@ -1,10 +1,16 @@
 const {Command, flags} = require('@oclif/command')
+const { exec } = require('child_process');
 
 class HelloCommand extends Command {
   async run() {
-    const {flags} = this.parse(HelloCommand)
-    const name = flags.name || 'world'
-    this.log(`hello ${name} from ./src/commands/hello.js`)
+    console.log(exec('ls -a', (error, stdout, stderr) => {
+      if (error) {
+        console.error(`exec error: ${error}`);
+        return;
+      }
+      console.log(`stdout: ${stdout}`);
+      console.error(`stderr: ${stderr}`);
+    }))
   }
 }
 
