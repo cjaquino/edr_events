@@ -1,0 +1,17 @@
+[
+  {
+    "type": "file",
+    "action": "create",
+    "filepath": "./RC_Test.txt"
+  },
+  {
+    "type": "file",
+    "action": "modify",
+    "filepath": "./RC_Test.txt"
+  },
+  {
+    "type": "file",
+    "action": "delete",
+    "filepath": "./RC_Test.txt"
+  }
+]

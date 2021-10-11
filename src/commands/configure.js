@@ -1,7 +1,8 @@
 const { Command } = require('@oclif/command');
-const { existsSync, readFileSync } = require('fs');
+const { existsSync, readFileSync, write } = require('fs');
 const ProcessCommand = require('./process.js')
-const FileCommand = require('./file.js');
+// const FileCommand = require('./file.js');
+const FileEvent = require('../util/fileEvent');
 const NetCommand = require('./net.js');
 
 class ConfigureCommand extends Command {
@@ -22,7 +23,9 @@ class ConfigureCommand extends Command {
             ProcessCommand.run(['--command', c.command])
             break;
           case 'file':
-            FileCommand.run(['--filepath', c.filepath, '--action', c.action]);
+            // FileCommand.run(['--filepath', c.filepath, '--action', c.action]);
+            const e = new FileEvent(c.filepath, c.action);
+            e.run();
             break;
           case 'net':
             NetCommand.run(['--url', c.url])
