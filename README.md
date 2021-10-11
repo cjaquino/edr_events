@@ -15,7 +15,7 @@ edr_events
 
 # Usage
 <!-- usage -->
-Once cloned and linked, the user can either run singlar events or pass a configuration file to run a series of events. You must run `edr_events init` first to scaffold the logs file.
+Once cloned and linked, the user can either run singular events or pass a configuration file to run a series of events. You must run `edr_events init` first to scaffold the logs file.
 
 ```sh-session
 SETUP
