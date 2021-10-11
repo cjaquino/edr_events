@@ -1,21 +1,21 @@
-const net = require('net');
-const EDREvent = require('./EDREvent');
-const { logEvent } = require('./logs');
+const net = require('net')
+const EDREvent = require('./EDREvent')
+const {logEvent} = require('./logs')
 
 class NetEvent extends EDREvent {
   constructor(url) {
-    super();
-    this.url = url;
+    super()
+    this.url = url
   }
 
   run() {
     const client = net.createConnection(80, this.url, () => {
       this.srcAddr = `${client.localAddress}:${client.localPort}`
       this.destAddr = `${client.remoteAddress}:${client.remotePort}`
-      this.bytesWritten = client.bytesWritten;
-      this.protocol = 'tcp';
+      this.bytesWritten = client.bytesWritten
+      this.protocol = 'tcp'
 
-      const logObj = {
+      const logObject = {
         timestamp: this.timestamp,
         user: this.user,
         destAddr: this.destAddr,
@@ -24,13 +24,13 @@ class NetEvent extends EDREvent {
         protocol: this.protocol,
         processName: 'node',
         processCLI: 'node',
-        pid: process.pid
+        pid: process.pid,
       }
 
-      logEvent(logObj);
-      client.end();
-    });
+      logEvent(logObject)
+      client.end()
+    })
   }
 }
 
-module.exports = NetEvent;
+module.exports = NetEvent

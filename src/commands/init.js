@@ -1,9 +1,9 @@
-const { Command } = require('@oclif/command')
-const { initLogs } = require('../util/logs.js')
+const {Command} = require('@oclif/command')
+const {initLogs} = require('../util/logs.js')
 
 class InitCommand extends Command {
   async run() {
-    initLogs();
+    initLogs()
   }
 }
 

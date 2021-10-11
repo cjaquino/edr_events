@@ -1,13 +1,13 @@
-const {Command, flags} = require('@oclif/command');
-const ProcessEvent = require('../util/processEvent.js');
+const {Command, flags} = require('@oclif/command')
+const ProcessEvent = require('../util/processEvent.js')
 
 class ProcessCommand extends Command {
   async run() {
-    const { flags } = this.parse(ProcessCommand)
+    const {flags} = this.parse(ProcessCommand)
 
     if (flags.command) {
-      const e = new ProcessEvent(flags.command);
-      e.run();
+      const event = new ProcessEvent(flags.command)
+      event.run()
     }
   }
 }
@@ -15,7 +15,7 @@ class ProcessCommand extends Command {
 ProcessCommand.description = 'Runs a process'
 
 ProcessCommand.flags = {
-  command: flags.string({ char: 'c', description: 'Command to execute'})
+  command: flags.string({char: 'c', description: 'Command to execute'}),
 }
 
 module.exports = ProcessCommand

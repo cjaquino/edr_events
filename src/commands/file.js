@@ -3,11 +3,10 @@ const FileEvent = require('../util/fileEvent')
 
 class FileCommand extends Command {
   async run() {
-    const { flags } = this.parse(FileCommand)
+    const {flags} = this.parse(FileCommand)
 
-    const e = new FileEvent(flags.filepath, flags.action);
-    e.run();
-
+    const event = new FileEvent(flags.filepath, flags.action)
+    event.run()
   }
 }
 

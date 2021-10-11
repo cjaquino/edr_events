@@ -1,0 +1,25 @@
+[
+  {
+    "type": "process",
+    "command": "echo 'testing edr_events'"
+  },
+  {
+    "type": "file",
+    "action": "create",
+    "filepath": "./test_config.txt"
+  },
+  {
+    "type": "file",
+    "action": "modify",
+    "filepath": "./test_config.txt"
+  },
+  {
+    "type": "file",
+    "action": "delete",
+    "filepath": "./test_config.txt"
+  },
+  {
+    "type": "net",
+    "url": "yahoo.com"
+  }
+]
