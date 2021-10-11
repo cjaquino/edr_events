@@ -1,7 +1,7 @@
 [
   {
     "type": "process",
-    "command": "ls -a"
+    "command": "echo 'testing edr_events'"
   },
   {
     "type": "file",

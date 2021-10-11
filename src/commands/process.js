@@ -1,12 +1,12 @@
 const {Command, flags} = require('@oclif/command');
-const processEvent = require('../util/processEvent.js');
+const ProcessEvent = require('../util/processEvent.js');
 
 class ProcessCommand extends Command {
   async run() {
     const { flags } = this.parse(ProcessCommand)
 
     if (flags.command) {
-      const e = new processEvent(flags.command);
+      const e = new ProcessEvent(flags.command);
       e.run();
     }
   }
