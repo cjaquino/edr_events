@@ -1,34 +1,36 @@
 const EDREvent = require("./EDREvent");
 const { existsSync } = require('fs');
-const { exec } = require('child_process');
+const { execSync } = require('child_process');
 const { logEvent } = require('./logs.js');
 
 const touchFile = (filepath) => {
-  return exec(`touch ${filepath}`, (err, stdout, stderr) => {
-    if (err) {
-      console.error(`error: ${err.message}`);
-      return;
-    }
+  return execSync(`touch ${filepath}`)
+  // , (err, stdout, stderr) => {
+  //   if (err) {
+  //     console.error(`error: ${err.message}`);
+  //     return;
+  //   }
 
-    if (stderr) {
-      console.error(`stderr: ${stderr}`);
-      return;
-    }
-  })
+  //   if (stderr) {
+  //     console.error(`stderr: ${stderr}`);
+  //     return;
+  //   }
+  // })
 }
 
 const deleteFile = (filepath) => {
-  return exec(`rm ${filepath}`, (err, stdout, stderr) => {
-    if (err) {
-      console.error(`error: ${err.message}`);
-      return;
-    }
+  return execSync(`rm ${filepath}`)
+  // , (err, stdout, stderr) => {
+  //   if (err) {
+  //     console.error(`error: ${err.message}`);
+  //     return;
+  //   }
 
-    if (stderr) {
-      console.error(`stderr: ${stderr}`);
-      return;
-    }
-  })
+  //   if (stderr) {
+  //     console.error(`stderr: ${stderr}`);
+  //     return;
+  //   }
+  // })
 }
 
 class FileEvent extends EDREvent {
@@ -65,8 +67,8 @@ class FileEvent extends EDREvent {
     if (!existsSync(this.filepath)) {
       const proc = touchFile(this.filepath);
       this.pid = proc.pid;
-      this.processName = proc.spawnargs[0];
-      this.processCLI = proc.spawnargs.join(' ');
+      this.processName = 'touch';
+      this.processCLI = `touch ${this.filepath}`;
       logEvent(this);
     } else {
       console.log(`${this.filepath} already exists.`)
@@ -77,8 +79,8 @@ class FileEvent extends EDREvent {
     if (existsSync(this.filepath)) {
       const proc = touchFile(this.filepath);
       this.pid = proc.pid;
-      this.processName = proc.spawnargs[0];
-      this.processCLI = proc.spawnargs.join(' ');
+      this.processName = 'touch';
+      this.processCLI = `touch ${this.filepath}`;
       logEvent(this);
     } else {
       console.log(`${this.filepath} does not exist. Cannot modify.`)
@@ -90,8 +92,8 @@ class FileEvent extends EDREvent {
     if (existsSync(this.filepath)) {
       const proc = deleteFile(this.filepath);
       this.pid = proc.pid;
-      this.processName = proc.spawnargs[0];
-      this.processCLI = proc.spawnargs.join(' ');
+      this.processName = 'rm';
+      this.processCLI = `rm ${this.filepath}`;
       logEvent(this);
     } else {
       console.log(`${this.filepath} does not exist. Cannot delete.`)
