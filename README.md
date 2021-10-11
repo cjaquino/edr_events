@@ -33,8 +33,8 @@ USAGE
 # Notes
 <!-- notes -->
 ### Supported Operating Systems
-Ubuntu 20.04 - Node version 16.9.1
-MacOS Big Sur 11.5.2 - Node version 16.10.0
+- Ubuntu 20.04 - Node version 16.9.1
+- MacOS Big Sur 11.5.2 - Node version 16.10.0
 
 ### Future Improvements
 - Support for Windows OS.
